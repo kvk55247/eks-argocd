@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-app
+  name: namespaces
   namespace: argocd # Namespace where Argo CD is installed
 spec:
   project: default # The Argo CD Project this application belongs to
   source:
-    repoURL: https://github.com/your-org/my-app-repo.git # URL of your Git repository
+    repoURL: https://github.com/kvk55247/eks-argocd.git # URL of your Git repository
     targetRevision: HEAD # The branch or commit hash to sync from
-    path: k8s-manifests # Path within the repository to your Kubernetes manifests
+    path: namespaces # Path within the repository to your Kubernetes manifests
   destination:
     server: https://kubernetes.default.svc # The Kubernetes API server URL
-    namespace: my-app-namespace # The namespace in the target cluster to deploy to
+    namespace: argocd # The namespace in the target cluster to deploy to
   syncPolicy:
     automated:
       prune: true # Automatically delete resources that are no longer in Git
