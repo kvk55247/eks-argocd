@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: namespaces
+  name: storageclasses
   namespace: argocd # Namespace where Argo CD is installed
 spec:
   project: default # The Argo CD Project this application belongs to
