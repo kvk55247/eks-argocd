@@ -7,7 +7,7 @@ spec:
   project: default # The Argo CD Project this application belongs to
   source:
     repoURL: https://github.com/kvk55247/eks-argocd.git # URL of your Git repository
-    targetRevision: HEAD # The branch or commit hash to sync from
+    targetRevision: main # The branch or commit hash to sync from
     path: namespaces # Path within the repository to your Kubernetes manifests
   destination:
     server: https://kubernetes.default.svc # The Kubernetes API server URL
